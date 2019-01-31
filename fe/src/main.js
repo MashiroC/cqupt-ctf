@@ -6,6 +6,8 @@ import VueResource from "vue-resource";
 import App from './App'
 import Home from './pages/Home'
 import Test from './pages/Test'
+import Teams from './pages/Teams'
+
 
 Vue.config.productionTip = false;
 
@@ -13,15 +15,16 @@ Vue.use(VueRouter);
 Vue.use(VueResource);
 
 new Vue({
-  el: '#app',
-  router,
-  data: {msg: 'hello world', color: 'color:aqua'},
-  components: { App,Home,Test },
-  methods: {
-    test: function () {
-      this.msg = 'welcome';
-      this.color = 'color:red';
+    el: '#app',
+    router,
+    render: h => h(App),
+    data: {msg: 'hello world', color: 'color:aqua'},
+    components: {App, Home, Test, Teams},
+    methods: {
+        test: function () {
+            this.msg = 'welcome';
+            this.color = 'color:red';
 
+        }
     }
-  }
 });
